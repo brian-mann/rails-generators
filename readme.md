@@ -8,35 +8,37 @@ The `marionette-template.rb` is an application template used when creating a new
 
 `rails new APPNAME -m https://raw.github.com/brian-mann/rails-generators/master/marionette-template.rb`
 
+***
+
 ### What this template does
 
-##### Miscellaneous File Cleanup
+#### Miscellaneous File Cleanup
 * Removes default `app/assets/images/rails.png` image
 * Removes default `public/index.html` file
 * Renames `README.rdoc` to `README.md`
 
-##### File Permissions
+#### File Permissions
 * chmod's log directory to 0777
 * TODO: add db directory
 
-##### Routing
+#### Routing
 * Sets default route to: `application#index`
 
-##### App Views
+#### App Views
 * Creates `app/views/application` directory
 * Creates `app/views/application/index.html.erb` file
 
-##### App Stylesheets
+#### App Stylesheets
 * Creates `app/assets/stylesheets/apps` directory
 * Creates `app/assets/stylesheets/app/_base.css.scss` file
 * Renames `app/assets/stylesheets/application.css` to `application.css.scss`
 * Removes `require self` and `require tree .` from `application.css.scss` file
 * Imports `twitter/bootstrap` and `apps/_base` SCSS files
 
-##### APP Javascripts
+#### APP Javascripts
 * Removes `jquery_ujs` and `require_tree .` from `app/assets/javascripts/application.js` file
 
-##### Included Gems
+#### Included Gems
 * thin
 * rabl
 * oj
