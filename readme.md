@@ -1,10 +1,10 @@
-# Rails Application Templates / Generators for Marionette Projects
+# Rails Application Templates / Generators for Marionette
+
+The application template and generators remove a lot of unnecessary files, and sets up sensible defaults for working with Backbone/Marionette projects.
 
 ## Using the Application Template
 
-The `marionette-template.rb` is an application template for rails used when creating a new application.
-
-To use this application template, in the terminal type:
+The `marionette-template.rb` is an application template used when creating a new rails application.  To use this application template, in the terminal type:
 
 `rails new APPNAME -m https://raw.github.com/brian-mann/rails-generators/master/marionette-template.rb`
 
