@@ -8,7 +8,7 @@ The `marionette-template.rb` is an application template used when creating a new
 
 `rails new APPNAME -m https://raw.github.com/brian-mann/rails-generators/master/marionette-template.rb`
 
-## What this template does
+### What this template does
 
 #### Miscellaneous File Cleanup
 * Removes default `app/assets/images/rails.png` image
@@ -20,7 +20,7 @@ The `marionette-template.rb` is an application template used when creating a new
 * TODO: add db directory
 
 #### Routing
-* Sets up default route to: `application#index`
+* Sets default route to: `application#index`
 
 #### App Views
 * Creates `app/views/application` directory
@@ -36,7 +36,7 @@ The `marionette-template.rb` is an application template used when creating a new
 #### APP Javascripts
 * Removes `jquery_ujs` and `require_tree .` from `app/assets/javascripts/application.js` file
 
-#### Adds Gems
+#### Included Gems
 * thin
 * rabl
 * oj
