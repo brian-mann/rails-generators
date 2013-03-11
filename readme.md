@@ -1,16 +1,16 @@
 # Rails Application Templates / Generators for Marionette
 
-The application template and generators remove a lot of unnecessary files, and sets up sensible defaults for working with Backbone/Marionette projects.
+After developing conventions for working with Backbone/Marionette, I wrote my own rails generators and application template.  These remove a lot of unnecessary files, and sets up sensible defaults for working with Backbone/Marionette projects.
 
 ## Using the Application Template
 
 The `marionette-template.rb` is an application template used when creating a new rails application.  To use this application template, in the terminal type:
 
-`rails new APPNAME -m https://raw.github.com/brian-mann/rails-generators/master/marionette-template.rb`
+```ruby
+rails new APPNAME -m https://raw.github.com/brian-mann/rails-generators/master/marionette-template.rb
+```
 
-***
-
-### What this template does
+## What this template does
 
 #### Miscellaneous File Cleanup
 * Removes default `app/assets/images/rails.png` image
