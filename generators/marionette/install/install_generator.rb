@@ -1,3 +1,5 @@
+require 'generators/marionette/resource_helpers'
+
 module Marionette
 	module Generators
 		class InstallGenerator < Rails::Generators::Base
@@ -19,7 +21,7 @@ module Marionette
 		
 			def append_lib_dependencies
 				%w{underscore backbone marionette}.each do |lib|
-					append_to_file "app/assets/javascripts/application.js" do
+					append_to_file "#{javascript_path}/application.js" do
 						"\n//= require lib/#{lib}"
 					end
 				end
@@ -27,23 +29,30 @@ module Marionette
 			
 			def create_dir_layout
 				%w{apps config entities views}.each do |dir|
-					empty_directory "app/assets/javascripts/backbone/#{dir}"
+					empty_directory "#{javascript_path}/backbone/#{dir}"
 				end
 			end
 			
 			def append_app_files 
-				append_to_file "app/assets/javascripts/application.js" do
+				append_to_file "#{javascript_path}/application.js" do
 					"//= require_tree ./backbone/config\n" +
 					"//= require backbone/app\n" +
 					"//= require_tree ./backbone/apps\n" +
-					"//= require_tree ./backbone/entities\n"
+					"//= require_tree ./backbone/entities\n" +
+					"//= require_tree ./backbone/views\n"
 				end
 			end
 			
 			def create_app_file
 				@current_user = yes? "Do you need to work with an authenticated current user (y/n)"
-				template "app.js.coffee", "app/assets/javascripts/backbone/app.js.coffee"
+				template "app.js.coffee", "#{javascript_path}/backbone/app.js.coffee"
 			end
+			
+			## TODO: SHOULD ASK ABOUT STARTING UP ANY SPECIFIC MODULES 
+			
+			## TODO: SHOULD ASK ABOUT DEFAULT ROUTE
+			
+			## TODO: SHOULD ASK ABOUT WHICH REGIONS THE USER WANTS ADDED ON TOP OF MAINREGION
 			
 			def start_marionette_app
 				append_to_file "app/views/application/index.html.erb" do
@@ -52,14 +61,6 @@ module Marionette
 			end
 			
 			## TODO: SHOULD ALSO WORK ON APPLICATION.HTML.ERB AND APPEND BEFORE THE END TO START THE DEMO APP + HANDLE CURRENT USER
-			
-			private
-			
-			# def inject_current_user
-			# 	inject_into_file "app/views/application/index.html.erb" do
-			# 		
-			# 	end
-			# end
 
 		end
 	end
