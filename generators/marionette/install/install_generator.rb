@@ -1,7 +1,7 @@
 module Marionette
 	module Generators
-		class InstallGenerator < Rails::Generators::NamedBase
-			# include Backbone::Generators::ResourceHelpers
+		class InstallGenerator < Rails::Generators::Base
+			include Marionette::Generators::ResourceHelpers
 
 			source_root File.expand_path("../templates", __FILE__)
 
@@ -45,16 +45,21 @@ module Marionette
 				template "app.js.coffee", "app/assets/javascripts/backbone/app.js.coffee"
 			end
 			
+			def start_marionette_app
+				append_to_file "app/views/application/index.html.erb" do
+					embed_template "index.html.erb"
+				end
+			end
+			
+			## TODO: SHOULD ALSO WORK ON APPLICATION.HTML.ERB AND APPEND BEFORE THE END TO START THE DEMO APP + HANDLE CURRENT USER
+			
 			private
 			
-			def embed_file(source, indent='')
-				IO.read(File.join(self.class.source_root, source)).gsub(/^/, indent)
-			end
-
-			def embed_template(source, indent='')
-				template = File.join(self.class.source_root, source)
-				ERB.new(IO.read(template), nil, '-').result(binding).gsub(/^/, indent)
-			end
+			# def inject_current_user
+			# 	inject_into_file "app/views/application/index.html.erb" do
+			# 		
+			# 	end
+			# end
 
 		end
 	end

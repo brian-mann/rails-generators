@@ -1,4 +1,4 @@
-@<%= file_name.camelize %> = do (Backbone, Marionette) ->
+@<%= js_app_name %> = do (Backbone, Marionette) ->
 	
 	App = new Marionette.Application	
 	<% if @current_user %>
