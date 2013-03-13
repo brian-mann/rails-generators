@@ -1,10 +1,6 @@
 module Marionette
   module Generators
     module ResourceHelpers
-      
-      # def backbone_path
-      #   "app/assets/javascripts/backbone"
-      # end
       # 
       # def model_namespace
       #   [js_app_name, "Models", class_name].join(".")
@@ -33,6 +29,22 @@ module Marionette
       # def jst(action)
       #   "backbone/templates/#{plural_name}/#{action}"
       # end
+
+			def javascript_path
+				"app/assets/javascripts"
+			end
+			
+			def backbone_path
+				"#{javascript_path}/backbone"
+			end
+			
+			def config_path
+				"#{backbone_path}/config"
+			end
+			
+			def module_app_namespace name
+				name.camelize + "App"
+			end
 
 			def embed_file(source, indent='')
 				IO.read(File.join(self.class.source_root, source)).gsub(/^/, indent)
