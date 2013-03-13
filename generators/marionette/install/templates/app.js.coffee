@@ -1,7 +1,7 @@
 @<%= js_app_name %> = do (Backbone, Marionette) ->
 	
 	App = new Marionette.Application	
-	<% if @current_user %>
+	<% if @current_user -%>
 	# App.rootRoute = Routes.users_path()
 	# 
 	# App.on "initialize:before", (options) ->
@@ -9,7 +9,8 @@
 	
 	# App.reqres.addHandler "get:current:user", ->
 	# 	App.currentUser
-	<% end %>	
+	<% end -%>	
+	
 	App.addRegions
 		mainRegion: "#main-region"
 	
