@@ -1,4 +1,6 @@
-# Rails Application Templates / Generators for Marionette (NOT FINISHED OR DOCUMENTED YET, COME BACK LATER ^_^_)
+# (NOT FINISHED OR DOCUMENTED YET, COME BACK LATER)
+
+# Rails Application Templates / Generators for Marionette
 
 After developing conventions for working with Backbone/Marionette, I wrote my own rails generators and application template.  These remove a lot of unnecessary files, and sets up sensible defaults for working with Backbone/Marionette projects.
 
