@@ -53,6 +53,7 @@ insert_into_file "app/controllers/application_controller.rb", "\n\tdef index\n\t
 if yes? "Initialize git and commit? (y/n)"
 	git :init
 	append_file ".gitignore", ".DS_Store"
+	append_file ".gitignore", "/log/generators" if yes? "Ignore lib/generators? (y/n)"
 	git add: "."
 	git commit: "-a -m 'Initial commit'"	
 end
