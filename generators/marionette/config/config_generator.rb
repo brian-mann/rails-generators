@@ -10,7 +10,7 @@ module Marionette
 			## TODO: ASK WHAT KIND OF CONFIG YOU'D LIKE, RENDERER/APPLICATION/JQUERY/JQUERY UI/ETC/VIEWS
 
 			def create_marionette_renderer
-				template "renderer.html.erb", "#{config_path}/marionette/renderer.js.coffee"
+				template "renderer.js.coffee", "#{config_path}/marionette/renderer.js.coffee"
 			end
 
 		end
