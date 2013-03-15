@@ -19,6 +19,14 @@ module Marionette
 			# end
 			#
 		
+			## gets each of the external libs and places them in the lib directory
+			def get_lib_dependencies
+				external_libs.each do |name, lib|
+					get lib, "#{javascript_path}/lib/#{name}.js"
+				end
+			end			
+			
+			## appends each of the lib dependencies in applications.js in the correct order
 			def append_lib_dependencies
 				%w{underscore backbone marionette}.each do |lib|
 					append_to_file "#{javascript_path}/application.js" do
@@ -35,7 +43,7 @@ module Marionette
 			
 			def append_app_files 
 				append_to_file "#{javascript_path}/application.js" do
-					"//= require_tree ./backbone/config\n" +
+					"\n//= require_tree ./backbone/config\n" +
 					"//= require backbone/app\n" +
 					"//= require_tree ./backbone/apps\n" +
 					"//= require_tree ./backbone/entities\n" +

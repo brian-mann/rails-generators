@@ -30,6 +30,14 @@ module Marionette
       #   "backbone/templates/#{plural_name}/#{action}"
       # end
 
+			def external_libs
+				{
+					underscore: "http://documentcloud.github.com/underscore/underscore.js",
+					backbone: 	"http://documentcloud.github.com/backbone/backbone.js",
+					marionette: "http://marionettejs.com/downloads/backbone.marionette.js",
+				}
+			end
+
 			def javascript_path
 				"app/assets/javascripts"
 			end
