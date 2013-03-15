@@ -36,10 +36,13 @@ inside "app/assets/javascripts" do
 end
 
 gem 'thin'
-gem 'rabl'
-gem 'oj'
-gem 'gon'
-gem 'js-routes'
+if yes? "Do you need to generate JSON? (y/n)"
+	gem 'rabl'
+	gem 'oj'
+	gem 'gon'
+end
+gem 'js-routes' if yes? "Are you using client side routes? (y/n)"
+gem 'jquery-ui-rails' if yes? "Are you using jQuery UI? (y/n)"
 
 gem_group :assets do
   gem 'eco'
