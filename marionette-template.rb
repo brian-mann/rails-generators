@@ -10,9 +10,7 @@ chmod "log", 0777
 
 inside "app/views" do
 	empty_directory "application"
-	create_file "application/index.html.erb" do
-		"foo"
-	end
+	create_file "application/index.html.erb"
 end
 
 inside "app/assets/stylesheets" do
