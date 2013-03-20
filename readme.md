@@ -51,5 +51,5 @@ rails new APPNAME -m https://raw.github.com/brian-mann/rails-generators/master/m
 * bootstrap-sass-rails
 
 ## TODO:
-*Document additional template actions
-*Document entire use of all the generators
+* Document additional template actions
+* Document entire use of all the generators
