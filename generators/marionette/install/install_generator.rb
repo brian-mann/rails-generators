@@ -6,7 +6,7 @@ module Marionette
 			include Marionette::Generators::ResourceHelpers
 
 			source_root File.expand_path("../templates", __FILE__)
-
+			
 			# desc "This generator installs backbone.js with a default folder layout in app/assets/javascripts/backbone"
 
 			# class_option :skip_git, :type => :boolean, :aliases => "-G", :default => false,
@@ -18,6 +18,16 @@ module Marionette
 			#		end
 			# end
 			#
+			
+			def name_your_javascript_app
+				if no? "The default marionette application name is: #{suggested_app_name} -- Is this ok? (y/n)"
+					@app_name = ask("What would you like to name your Marionette Application?").camelize
+				end
+				
+				create_file "config/initializers/marionette.rb" do					
+					"#{rails_application_name}::Application.config.marionette_app_name = '#{suggested_app_name}'"
+				end
+			end
 		
 			## gets each of the external libs and places them in the lib directory
 			def get_lib_dependencies
@@ -63,12 +73,20 @@ module Marionette
 			## TODO: SHOULD ASK ABOUT WHICH REGIONS THE USER WANTS ADDED ON TOP OF MAINREGION
 			
 			def start_marionette_app
-				append_to_file "app/views/application/index.html.erb" do
+				destination = "app/views/application/index.html.erb"
+				create_file destination unless File.exist? destination
+				append_to_file destination do
 					embed_template "index.html.erb"
 				end
 			end
 			
 			## TODO: SHOULD ALSO WORK ON APPLICATION.HTML.ERB AND APPEND BEFORE THE END TO START THE DEMO APP + HANDLE CURRENT USER
+			
+			private
+			
+			def suggested_app_name
+				@app_name || rails_application_name
+			end
 
 		end
 	end

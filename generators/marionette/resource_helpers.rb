@@ -69,11 +69,15 @@ module Marionette
       
       def application_name
         if defined?(Rails) && Rails.application
-          Rails.application.class.name.split('::').first
+          Rails.configuration.marionette_app_name rescue rails_application_name
         else
           "app"
         end
       end
+
+			def rails_application_name
+				Rails.application.class.name.split('::').first
+			end
       
       # def uncapitalize(str)
       #   str[0, 1].downcase << str[1..-1]
