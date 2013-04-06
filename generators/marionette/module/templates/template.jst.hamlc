@@ -1,0 +1,5 @@
+%a(href='https://github.com/marionettejs/backbone.marionette/wiki/Using-jst-templates-with-marionette')
+	Template shamelessly copied from doc
+%ul
+	- for friend in @friends
+		%li= friend.name
