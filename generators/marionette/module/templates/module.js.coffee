@@ -8,6 +8,10 @@
 	<% end -%>
 	
 	API =
+        <% @actions.each do |action| %>
+		<%= action %>: ->
+			<%= "# #{@module}.#{action.capitalize}.Controller.sample()" if @templated_actions.include? action and not @clean %>
+        <% end if @routable %>
 
 	<% if @routable %>
 	App.addInitializer ->
