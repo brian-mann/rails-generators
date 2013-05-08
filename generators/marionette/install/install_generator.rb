@@ -55,9 +55,9 @@ module Marionette
 				append_to_file "#{javascript_path}/application.js" do
 					"\n//= require_tree ./backbone/config\n" +
 					"//= require backbone/app\n" +
-					"//= require_tree ./backbone/apps\n" +
 					"//= require_tree ./backbone/entities\n" +
-					"//= require_tree ./backbone/views\n"
+					"//= require_tree ./backbone/views\n" +
+					"//= require_tree ./backbone/apps\n"
 				end
 			end
 			
