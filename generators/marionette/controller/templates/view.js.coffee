@@ -4,4 +4,4 @@
 		template: "<%= view_template_path %>"
 
 		regions:
-			foo: "#foo-region"
+			fooRegion: "#foo-region"
