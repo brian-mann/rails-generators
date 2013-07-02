@@ -70,3 +70,29 @@ This will configure the client side name.
 ```ruby
 rails g marionette:config
 ```
+
+#### Create Marionette Modules
+
+```ruby
+rails g marionette:module MODULENAME [controllers]
+```
+
+This will create a module_app file and initial directory with corresponding AppRoutes for the passed in controller actions.  This will also automatically generate the controllers, views, and initial layout template.
+
+Example: `rails g marionette:module Users list show edit` would create:
+
+*__apps/users__
+*apps/users/users_app.js.coffee
+*__apps/users/list__
+*apps/users/list/list_controller.js.coffee
+*apps/users/list/list_view.js.coffee
+*__apps/users/list/templates__
+*apps/users/list/templates/layout.jst.eco
+
+#### Create Marionette Controllers
+
+```ruby
+rails g marionette:controller MODULENAME [controllers]
+```
+
+This will create a controller, view, and layout template combination for each controller within the module passed in.
