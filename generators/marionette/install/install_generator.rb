@@ -46,7 +46,7 @@ module Marionette
 			end
 			
 			def create_dir_layout
-				%w{apps config entities views}.each do |dir|
+				%w{apps config entities views components controllers}.each do |dir|
 					empty_directory "#{javascript_path}/backbone/#{dir}"
 				end
 			end
@@ -55,8 +55,10 @@ module Marionette
 				append_to_file "#{javascript_path}/application.js" do
 					"\n//= require_tree ./backbone/config\n" +
 					"//= require backbone/app\n" +
+					"//= require_tree ./backbone/controllers\n" +
 					"//= require_tree ./backbone/entities\n" +
 					"//= require_tree ./backbone/views\n" +
+					"//= require_tree ./backbone/components\n" +
 					"//= require_tree ./backbone/apps\n"
 				end
 			end
