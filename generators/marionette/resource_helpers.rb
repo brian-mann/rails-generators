@@ -22,8 +22,12 @@ module Marionette
 				"#{backbone_path}/config"
 			end
 			
-			def module_app_namespace name
-				name.camelize + "App"
+			def module_name_class
+				file_name.classify.pluralize + "App"
+			end
+			
+			def module_name_underscore
+				file_name.underscore.pluralize
 			end
 
 			def embed_file(source, indent='')

@@ -29,20 +29,17 @@ module Marionette
 			## TODO: ASK WHAT SUB MODULES YOU'D LIKE ADDED AS WELL - WHICH COME AFTER THE MODULE - LIKE SCAFFOLDS
 			
 			def create_controller
-				# @routable = actions.length == 0 ? yes?("Should this module be routable? (y/n)") : true ## double check to make sure we don't want this module to be routable
-				# @module = module_app_namespace file_name ## should not use this ivar
 				actions.each do |action|
 					%W{ controller view }.each do |type|
 						@controller = action.capitalize
-						@module = module_app_namespace file_name
-						template "#{type}.js.coffee", "#{backbone_path}/apps/#{file_name}/#{action}/#{action}_#{type}.js.coffee"
+						template "#{type}.js.coffee", "#{backbone_path}/apps/#{module_name_underscore}/#{action}/#{action}_#{type}.js.coffee"
 					end
 				end
 			end
 			
 			def create_template
 				actions.each do |action|
-					template "layout.jst.eco", "#{backbone_path}/apps/#{file_name}/#{action}/templates/#{action}_layout.jst.eco"
+					template "layout.jst.eco", "#{backbone_path}/apps/#{module_name_underscore}/#{action}/templates/#{action}_layout.jst.eco"
 				end
 			end
 
