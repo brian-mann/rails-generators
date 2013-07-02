@@ -50,7 +50,6 @@ rails new APPNAME -m https://raw.github.com/brian-mann/rails-generators/master/m
 
 ### TODO:
 * Document additional template actions
-* Document entire use of all the generators
 
 ## Using the Marionette Generators
 

@@ -17,6 +17,7 @@ module Marionette
 				
 				create_file "config/initializers/marionette.rb" do					
 					"#{rails_application_name}::Application.config.marionette_app_name = '#{suggested_app_name}'"
+					## should also setup config for client side routes, and other config objects we want to track state on
 				end
 			end
 		
