@@ -31,11 +31,11 @@ module Marionette
 			def append_vendor_dependencies
 				%w{underscore backbone marionette}.each do |lib|
 					append_to_file "#{javascript_path}/application.js" do
-						"\n//= require vendor/#{lib}"
+						"\n//= require #{lib}"
 					end
 				end
 				append_to_file "#{javascript_path}/application.js" do
-					"\n//= require_tree ./vendor"
+					"\n//= require_tree ../../../vendor/assets/javascripts"
 				end
 			end
 			
