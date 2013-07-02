@@ -17,7 +17,7 @@ module Marionette
 				
 				## create the marionette initializer to store the state of our application and configuration
 				template "marionette.rb", "config/initializers/marionette.rb"
-				Rails.configuration.marionette[:app_name] = "#{suggested_app_name}" ## must do this for the initial app_name to be picked up
+				Rails.configuration.marionette = { app_name: "#{suggested_app_name}" } ## must do this for the initial app_name to be picked up
 			end
 		
 			## gets each of the external libs and places them in the lib directory
