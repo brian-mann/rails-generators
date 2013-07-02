@@ -54,20 +54,33 @@ rails new APPNAME -m https://raw.github.com/brian-mann/rails-generators/master/m
 
 ## Using the Marionette Generators
 
-#### Install the directories and folder organization used throughout BackboneRails.  By default will also invoke `marionette:config`.
+#### Installs all the preliminaries
+
+By default will also invoke `marionette:config`.
 
 ```ruby
 rails g marionette:install
 ```
 
-This will configure the client side name.
-
+Installation will do the following:
+* Configure the client side application name
+* Pull in the latest versions of Backbone / Underscore / Marionette
+* Create the initial directory structure for apps/views/components/controllers/mixins/config
+* Include the load order and directories via the Asset Pipeline
+* Create the Marionette Application instance file: `app.js.coffee`
+* Runs `rails g marionette:config` by default
 
 #### Configure Marionette: renderer, base entities, base controller, base views
 
 ```ruby
 rails g marionette:config
 ```
+
+Configuration will do the follow:
+* Override Marionette Renderer for JST Eco files
+* Create Base Entities for Models and Collections
+* Create a Base Controller for automating regions and cleanup
+* Create Base views for view/itemview/layout/collectionview/compositeview
 
 #### Create Marionette Modules
 
