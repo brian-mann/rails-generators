@@ -14,6 +14,9 @@
 	App.addRegions
 		mainRegion: "#main-region"
 	
+	App.reqres.setHandler "default:region", ->
+		App.mainRegion
+	
 	# App.addInitializer ->
 	# 	App.module("HeaderApp").start()
 	# 	App.module("FooterApp").start()
