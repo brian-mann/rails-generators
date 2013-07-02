@@ -79,6 +79,8 @@ Configuration will do the follow:
 * Create a Base Controller for automating regions and cleanup
 * Create Base Views for view / itemview / layout / collectionview / compositeview
 
+`config/initializers/marionette.rb` still store your answers for use when other generators run.
+
 #### Create Marionette Modules
 
 ```ruby
