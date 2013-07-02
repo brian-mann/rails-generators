@@ -24,11 +24,10 @@ module Marionette
 				template "module.js.coffee", "#{backbone_path}/apps/#{file_name}/#{file_name}_app.js.coffee"
 			end
 			
-			hook_for :actions do |action|
-				p action
-        invoke controller, [action]
-      end
-
+			def generate_controllers
+				generate "marionette:controller", file_name, *actions unless actions.empty?
+			end
+			
 		end
 	end
 end

@@ -8,6 +8,11 @@
 	<% end -%>
 	
 	API =
+	  <% actions.each do |action| -%>
+<%= action %>: ->
+	    new <%= @module %>.<%= action.capitalize %>.Controller
+
+	  <% end -%>
 
 	<% if @routable %>
 	App.addInitializer ->

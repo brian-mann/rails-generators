@@ -3,4 +3,11 @@
   class <%= @controller %>.Controller extends App.Controllers.Base
     
     initialize: ->
+      @layout = @getLayoutView()
+
+      @listenTo @layout, "show", =>
       
+      @show @layout
+    
+    getLayoutView: ->
+      new <%= @controller %>.Layout
