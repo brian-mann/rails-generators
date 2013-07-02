@@ -52,6 +52,7 @@ rails new APPNAME -m https://raw.github.com/brian-mann/rails-generators/master/m
 * Document additional template actions
 
 ## Using the Marionette Generators
+To access these generators, copy the `generators` folder into your `lib` directory.  Now you can install with the command below:
 
 #### Install all the preliminaries
 
