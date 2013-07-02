@@ -12,7 +12,8 @@
 	<% end -%>	
 	
 	App.addRegions
-		mainRegion: "#main-region"
+		headerRegion:	"#header-region"
+		mainRegion: 	"#main-region"
 	
 	App.reqres.setHandler "default:region", ->
 		App.mainRegion
