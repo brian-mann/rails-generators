@@ -1,5 +1,3 @@
-# (NOT FINISHED OR DOCUMENTED YET, COME BACK LATER)
-
 # Rails Application Templates / Generators for Marionette
 
 After developing conventions for working with Backbone/Marionette, I wrote my own rails generators and application template.  These remove a lot of unnecessary files, and sets up sensible defaults for working with Backbone/Marionette projects.
@@ -56,7 +54,7 @@ rails new APPNAME -m https://raw.github.com/brian-mann/rails-generators/master/m
 
 ## Using the Marionette Generators
 
-#### Install the directories and folder organization used throughout BackboneRails
+#### Install the directories and folder organization used throughout BackboneRails.  By default will also invoke `marionette:config`.
 
 ```ruby
 rails g marionette:install
@@ -77,11 +75,11 @@ rails g marionette:config
 rails g marionette:module MODULENAME [controllers]
 ```
 
-This will create a module_app file and initial directory with corresponding AppRoutes for the passed in controller actions.  This will also automatically generate the controllers, views, and initial layout template.
+This will create a module_app file and initial directory with corresponding AppRoutes for the passed in controller actions.  This will also automatically generate the controllers, views, and initial layout template.  Use this command to scaffold out your initial app modules.
 
 Example: `rails g marionette:module Users list show` would create:
 
-* __/apps/users__
+* __/users__
 	* users_app.js.coffee
 	* __/list__
 		* list_controller.js.coffee
@@ -100,4 +98,4 @@ Example: `rails g marionette:module Users list show` would create:
 rails g marionette:controller MODULENAME [controllers]
 ```
 
-This will create a controller, view, and layout template combination for each controller within the module passed in.
+This creates the same controller/view/template combination as above without creating the initial module_app file.  Use this to add controllers to an existing app module.

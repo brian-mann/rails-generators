@@ -8,17 +8,8 @@ module Marionette
 			source_root File.expand_path("../templates", __FILE__)
 			
 			# desc "This generator installs backbone.js with a default folder layout in app/assets/javascripts/backbone"
-
-			# class_option :skip_git, :type => :boolean, :aliases => "-G", :default => false,
-			#													:desc => "Skip Git ignores and keeps"
-
-			# def inject_backbone
-			#		inject_into_file "app/assets/javascripts/application.js", :before => "//= require_tree" do
-			#			"//= require underscore\n//= require backbone\n//= require backbone_rails_sync\n//= require backbone_datalink\n//= require backbone/#{application_name.underscore}\n"
-			#		end
-			# end
-			#
-			
+			class_option :config, :type => :boolean, :default => true, :description => "Invokes Marionette Base Configuration"
+	
 			def name_your_javascript_app
 				if no? "The default marionette application name is: #{suggested_app_name} -- Is this ok? (y/n)"
 					@app_name = ask("What would you like to name your Marionette Application?").camelize
@@ -83,6 +74,10 @@ module Marionette
 				append_to_file destination do
 					embed_template "index.html.erb"
 				end
+			end
+			
+			def invoke_config
+				generate "marionette:config" if options.config?
 			end
 			
 			## TODO: SHOULD ALSO WORK ON APPLICATION.HTML.ERB AND APPEND BEFORE THE END TO START THE DEMO APP + HANDLE CURRENT USER
