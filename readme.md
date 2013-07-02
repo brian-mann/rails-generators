@@ -56,7 +56,7 @@ rails new APPNAME -m https://raw.github.com/brian-mann/rails-generators/master/m
 
 ## Using the Marionette Generators
 
-###$ Install the directories and folder organization used throughout BackboneRails
+#### Install the directories and folder organization used throughout BackboneRails
 
 ```ruby
 rails g marionette:install
@@ -65,7 +65,7 @@ rails g marionette:install
 This will configure the client side name.
 
 
-###$ Configure Marionette: renderer, base entities, base controller
+#### Configure Marionette: renderer, base entities, base controller
 
 ```ruby
 rails g marionette:config
