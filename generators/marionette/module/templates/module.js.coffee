@@ -1,19 +1,19 @@
 @<%= js_application_name %>.module "<%= @module %>", (<%= @module %>, App, Backbone, Marionette, $, _) ->
-	<% if @routable -%> 
+
+	<%- if @routable -%>
 	class <%= @module %>.Router extends Marionette.AppRouter
 		appRoutes:
 		<% actions.each do |action| -%>
 	"<%= action %>": "<%= action %>"
 		<% end -%>
-	<% end -%>
-	
+	<%- end -%>
+
 	API =
-	  <% actions.each do |action| -%>
+		<% actions.each do |action| -%>
 <%= action %>: ->
-	    new <%= @module %>.<%= action.capitalize %>.Controller
+			new <%= @module %>.<%= action.capitalize %>.Controller
 
-	  <% end -%>
-
+		<% end -%>
 	<% if @routable %>
 	App.addInitializer ->
 		new <%= @module %>.Router
