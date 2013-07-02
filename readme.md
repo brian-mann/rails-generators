@@ -79,15 +79,20 @@ rails g marionette:module MODULENAME [controllers]
 
 This will create a module_app file and initial directory with corresponding AppRoutes for the passed in controller actions.  This will also automatically generate the controllers, views, and initial layout template.
 
-Example: `rails g marionette:module Users list show edit` would create:
+Example: `rails g marionette:module Users list show` would create:
 
-* __apps/users__
+* __/apps/users__
 	* users_app.js.coffee
-	* __list__
+	* __/list__
 		* list_controller.js.coffee
 		* list_view.js.coffee
-		* __templates__
-			* layout.jst.eco
+		* __/templates__
+			* list_layout.jst.eco
+	* __/show__
+		* show_controller.js.coffee
+		* show_view.js.coffee
+		* __/templates__
+			* show_layout.jst.eco
 
 #### Create Marionette Controllers
 
