@@ -110,3 +110,11 @@ rails g marionette:controller MODULENAME [controllers]
 ```
 
 This creates the same controller/view/template combination as above without creating the initial module_app file.  Use this to add controllers to an existing app module.
+
+#### Create Model / Collection Entities
+
+```ruby
+rails g marionette:entity MODELNAME
+```
+
+This will create a model, and ask to also create the corresponding collection along with the App.request handlers for returning the instances.
