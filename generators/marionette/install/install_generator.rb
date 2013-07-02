@@ -15,10 +15,8 @@ module Marionette
 					@app_name = ask("What would you like to name your Marionette Application?").camelize
 				end
 				
-				create_file "config/initializers/marionette.rb" do					
-					"#{rails_application_name}::Application.config.marionette_app_name = '#{suggested_app_name}'"
-					## should also setup config for client side routes, and other config objects we want to track state on
-				end
+				## create the marionette initializer to store the state of our application and configuration
+				template "marionette.rb", "config/initializers/marionette.rb"
 			end
 		
 			## gets each of the external libs and places them in the lib directory

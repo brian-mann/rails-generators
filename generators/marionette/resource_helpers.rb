@@ -69,7 +69,7 @@ module Marionette
       
       def application_name
         if defined?(Rails) && Rails.application
-          Rails.configuration.marionette_app_name rescue rails_application_name
+          Rails.configuration.marionette.app_name rescue rails_application_name
         else
           "app"
         end

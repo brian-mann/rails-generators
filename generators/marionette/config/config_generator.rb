@@ -27,10 +27,25 @@ module Marionette
 			end
 			
 			def create_base_views
-				if yes?("Create base views for Marionette View, ItemView, Layout, CollectionView, CompositeView? (y/n)")
+				@base_views = if yes?("Create base views for Marionette View, ItemView, Layout, CollectionView, CompositeView? (y/n)")
 					%W{_view itemview layout collectionview compositeview}.each do |view|
 						template "views/#{view}.js.coffee", "#{backbone_path}/views/_base/#{view}.js.coffee"
 					end
+				end
+			end
+			
+			def configure_js_routes
+				## if the gem 'js-routes' is found in the gemfile add config for js-routes
+				@match = File.read("#{destination_root}/Gemfile").include? "js-routes"
+				insert_into_file "config/initializers/marionette.rb", before: "end" do
+					embed_template "config/js_routes.rb"
+				end
+			end
+			
+			def configure_base_views
+				## if we've configured base_views set this to true
+				insert_into_file "config/initializers/marionette.rb", before: "end" do
+					embed_template "config/base_views.rb"
 				end
 			end
 
