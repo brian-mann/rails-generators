@@ -81,13 +81,13 @@ This will create a module_app file and initial directory with corresponding AppR
 
 Example: `rails g marionette:module Users list show edit` would create:
 
-*__apps/users__
-*apps/users/users_app.js.coffee
-*__apps/users/list__
-*apps/users/list/list_controller.js.coffee
-*apps/users/list/list_view.js.coffee
-*__apps/users/list/templates__
-*apps/users/list/templates/layout.jst.eco
+* __apps/users__
+* apps/users/users_app.js.coffee
+* __apps/users/list__
+* apps/users/list/list_controller.js.coffee
+* apps/users/list/list_view.js.coffee
+* __apps/users/list/templates__
+* apps/users/list/templates/layout.jst.eco
 
 #### Create Marionette Controllers
 
