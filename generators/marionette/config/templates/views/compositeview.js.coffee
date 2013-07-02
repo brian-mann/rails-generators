@@ -1,0 +1,4 @@
+@<%= js_app_name %>.module "Views", (Views, App, Backbone, Marionette, $, _) ->
+	
+	class Views.CompositeView extends Marionette.CompositeView
+		itemViewEventPrefix: "childview"

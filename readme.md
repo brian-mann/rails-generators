@@ -65,7 +65,7 @@ rails g marionette:install
 This will configure the client side name.
 
 
-#### Configure Marionette: renderer, base entities, base controller
+#### Configure Marionette: renderer, base entities, base controller, base views
 
 ```ruby
 rails g marionette:config
