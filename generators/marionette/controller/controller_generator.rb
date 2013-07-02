@@ -39,8 +39,15 @@ module Marionette
 			
 			def create_template
 				actions.each do |action|
+					@controller = action.capitalize
 					template "layout.jst.eco", "#{backbone_path}/apps/#{module_name_underscore}/#{action}/templates/#{action}_layout.jst.eco"
 				end
+			end
+			
+			private
+			
+			def view_template_path
+				"#{module_name_underscore}/#{@controller.downcase}/#{@controller.downcase}_layout"
 			end
 
 		end

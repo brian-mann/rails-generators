@@ -1,1 +1,1 @@
-layout
+Find me in: <%= view_template_path %>
