@@ -1,4 +1,4 @@
-@<%= js_app_name %>.module "Controllers", (Controllers, App, Backbone, Marionette, $, _) ->
+@<%= js_application_name %>.module "Controllers", (Controllers, App, Backbone, Marionette, $, _) ->
 	
 	class Controllers.Base extends Marionette.Controller
 		

@@ -3,11 +3,11 @@
 <%%= javascript_tag do %>
 	$(function() {
 		<%- if @current_user -%>
-		<%= js_app_name %>.start({
+		<%= js_application_name %>.start({
 			currentUser: gon.current_user
 		});
 		<%- else -%>
-		<%= js_app_name %>.start();
+		<%= js_application_name %>.start();
 		<%- end -%>
 	});
 <%% end %>

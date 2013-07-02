@@ -1,34 +1,6 @@
 module Marionette
   module Generators
     module ResourceHelpers
-      # 
-      # def model_namespace
-      #   [js_app_name, "Models", class_name].join(".")
-      # end
-      # 
-      # def singular_model_name
-      #   uncapitalize singular_name.camelize
-      # end
-      # 
-      # def plural_model_name
-      #   uncapitalize(plural_name.camelize)
-      # end
-      # 
-      # def collection_namespace
-      #   [js_app_name, "Collections", plural_name.camelize].join(".")
-      # end
-      # 
-      # def view_namespace
-      #   [js_app_name, "Views", plural_name.camelize].join(".")
-      # end
-      # 
-      # def router_namespace
-      #   [js_app_name, "Routers", plural_name.camelize].join(".")
-      # end
-      # 
-      # def jst(action)
-      #   "backbone/templates/#{plural_name}/#{action}"
-      # end
 
 			def external_libs
 				{
@@ -63,16 +35,8 @@ module Marionette
 				ERB.new(IO.read(template), nil, '-').result(binding).gsub(/^/, indent)
 			end
       
-      def js_app_name
-        application_name.camelize
-      end
-      
-      def application_name
-        if defined?(Rails) && Rails.application
-          Rails.configuration.marionette.app_name rescue rails_application_name
-        else
-          "app"
-        end
+      def js_application_name
+				Rails.configuration.marionette[:app_name].camelize rescue "App"
       end
 
 			def rails_application_name

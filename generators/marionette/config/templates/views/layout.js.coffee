@@ -1,3 +1,3 @@
-@<%= js_app_name %>.module "Views", (Views, App, Backbone, Marionette, $, _) ->
+@<%= js_application_name %>.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 	
 	class Views.Layout extends Marionette.Layout
