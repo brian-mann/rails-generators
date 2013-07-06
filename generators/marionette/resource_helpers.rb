@@ -23,11 +23,11 @@ module Marionette
 			end
 			
 			def module_name_class
-				file_name.classify.pluralize + "App"
+				file_name.camelize + "App"
 			end
 			
 			def module_name_underscore
-				file_name.underscore.pluralize
+				file_name.underscore
 			end
 
 			def embed_file(source, indent='')
