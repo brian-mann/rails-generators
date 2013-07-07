@@ -4,6 +4,7 @@ do (Marionette) ->
 		lookups: ["backbone/apps/", "backbone/components/"]
 
 		render: (template, data) ->
+			return if template is false
 			path = @getTemplate(template)
 			throw "Template #{template} not found!" unless path
 			path(data)
