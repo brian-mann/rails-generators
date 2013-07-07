@@ -22,7 +22,7 @@ module Marionette
 			
 			def create_base_controller
 				if yes?("Create base controller for Marionette Controllers? (y/n)")
-					template "controllers.js.coffee", "#{backbone_path}/controllers/_base.js.coffee"
+					template "controllers.js.coffee", "#{backbone_path}/controllers/_base_controller.js.coffee"
 				end
 			end
 			
