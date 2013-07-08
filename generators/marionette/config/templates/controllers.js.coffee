@@ -4,11 +4,10 @@
 
 		constructor: (options = {}) ->
 			@region = options.region or App.request "default:region"
-			super options
+			super
 
-		close: (args...) ->
-			delete @region
-			delete @options
+		close: ->
+			super
 
 		show: (view) ->
 			@listenTo view, "close", @close
