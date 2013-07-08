@@ -50,6 +50,7 @@ end
 
 comment_lines 'config/environments/development.rb', /active_record.mass_assignment_sanitizer/
 insert_into_file "app/controllers/application_controller.rb", "\n\tdef index\n\tend\n", :before => "end"
+prepend_to_file "Gemfile", "ruby \"1.9.3\"\n"
 
 if yes? "Initialize git and commit? (y/n)"
 	git :init

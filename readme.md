@@ -12,6 +12,9 @@ rails new APPNAME -m https://raw.github.com/brian-mann/rails-generators/master/m
 
 ## What this template does
 
+#### Ruby Version
+* Sets Ruby 1.9.3 in Gemfile
+
 #### Miscellaneous File Cleanup
 * Removes default `app/assets/images/rails.png` image
 * Removes default `public/index.html` file
