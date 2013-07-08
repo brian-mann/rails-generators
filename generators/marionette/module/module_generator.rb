@@ -19,7 +19,7 @@ module Marionette
 			## TODO: ASK WHAT SUB MODULES YOU'D LIKE ADDED AS WELL - WHICH COME AFTER THE MODULE - LIKE SCAFFOLDS
 			
 			def create_module
-				@routable = actions.length == 0 ? yes?("Should this module be routable? (y/n)") : true ## double check to make sure we don't want this module to be routable
+				@routable = yes?("Should this module be routable? (y/n)") ## double check to make sure we don't want this module to be routable
 				@module = module_name_class ## should not use this ivar
 				template "module.js.coffee", "#{backbone_path}/apps/#{module_name_underscore}/#{module_name_underscore}_app.js.coffee"
 			end

@@ -18,4 +18,8 @@
 	App.addInitializer ->
 		new <%= module_name_class %>.Router
 			controller: API
+	<% else %>
+	App.commands.setHandler "some:command", ->
+	
+	App.reqres.setHandler "some:request", ->
 	<% end -%>
