@@ -2,13 +2,13 @@
 <div id="main-region"></div>
 
 <%%= javascript_tag do %>
-	$(function() {
-		<%- if @current_user -%>
-		<%= js_application_name %>.start({
-			currentUser: gon.current_user
-		});
-		<%- else -%>
-		<%= js_application_name %>.start();
-		<%- end -%>
-	});
+  $(function() {
+    <%- if @current_user -%>
+    <%= js_application_name %>.start({
+      currentUser: gon.current_user
+    });
+    <%- else -%>
+    <%= js_application_name %>.start();
+    <%- end -%>
+  });
 <%% end %>
