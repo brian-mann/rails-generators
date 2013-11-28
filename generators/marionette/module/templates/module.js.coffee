@@ -3,8 +3,8 @@
   <%- if @routable -%>
   class <%= module_name_class %>.Router extends Marionette.AppRouter
     appRoutes:
-    <% actions.each do |action| -%>
-  "<%= action %>": "<%= action %>"
+    <% app_routes.each do |key, val| -%>
+  "<%= val %>": "<%= key %>"
     <% end -%>
   <%- end -%>
 
