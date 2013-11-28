@@ -37,13 +37,12 @@ module Marionette
       end
 
       def lookup(action)
-        hash = {
+        {
           list: resource_name,
           _new: resource_name + "/new",
           show: resource_name + "/:id"
           edit: resource_name + "/:id/edit"
-        }
-        hash[action.to_sym] || "change_me"
+        }[action.to_sym] || "change_me"
       end
 
       def resource_name
