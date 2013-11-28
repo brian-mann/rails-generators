@@ -11,7 +11,7 @@
   API =
     <% actions.each do |action| -%>
 <%= action %>: ->
-      new <%= module_name_class %>.<%= action.capitalize %>.Controller
+      new <%= module_name_class %>.<%= replace_underscore(action).capitalize %>.Controller
 
     <% end -%>
   <% if @routable %>

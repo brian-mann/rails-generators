@@ -29,7 +29,7 @@ module Marionette
       ## TODO: ASK WHAT SUB MODULES YOU'D LIKE ADDED AS WELL - WHICH COME AFTER THE MODULE - LIKE SCAFFOLDS
 
       def create_controller
-        actions.each do |action|
+        subbed_actions.each do |action|
           %W{ controller view }.each do |type|
             @controller = action.capitalize
             template "#{type}.js.coffee", "#{backbone_path}/apps/#{module_name_underscore}/#{action}/#{action}_#{type}.js.coffee"
@@ -38,7 +38,7 @@ module Marionette
       end
 
       def create_template
-        actions.each do |action|
+        subbed_actions.each do |action|
           @controller = action.capitalize
           template "layout.jst.eco", "#{backbone_path}/apps/#{module_name_underscore}/#{action}/templates/#{action}_layout.jst.eco"
         end
@@ -48,6 +48,10 @@ module Marionette
 
       def view_template_path
         "#{module_name_underscore}/#{@controller.downcase}/#{@controller.downcase}_layout"
+      end
+
+      def subbed_actions
+        actions.map! { |a| replace_underscore a }
       end
 
     end

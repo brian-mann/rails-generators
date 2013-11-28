@@ -40,7 +40,7 @@ module Marionette
         {
           list: resource_name,
           _new: resource_name + "/new",
-          show: resource_name + "/:id"
+          show: resource_name + "/:id",
           edit: resource_name + "/:id/edit"
         }[action.to_sym] || "change_me"
       end

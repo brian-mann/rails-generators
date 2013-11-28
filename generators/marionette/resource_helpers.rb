@@ -47,6 +47,10 @@ module Marionette
         Rails.application.class.name.split('::').first
       end
 
+      def replace_underscore(string)
+        string[0] == "_" ? string[1..-1] : string
+      end
+
       # def uncapitalize(str)
       #   str[0, 1].downcase << str[1..-1]
       # end
