@@ -1,6 +1,6 @@
 @<%= js_application_name %>.module "Controllers", (Controllers, App, Backbone, Marionette, $, _) ->
 
-  class Controllers.Base extends Marionette.Controller
+  class Controllers.Application extends Marionette.Controller
 
     constructor: (options = {}) ->
       @region = options.region or App.request "default:region"
