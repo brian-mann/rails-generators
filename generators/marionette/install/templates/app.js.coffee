@@ -7,7 +7,7 @@
   # App.on "initialize:before", (options) ->
   #   @currentUser = App.request "set:current:user", options.currentUser
 
-  # App.reqres.addHandler "get:current:user", ->
+  # App.reqres.setHandler "current:user", ->
   #   App.currentUser
   <% end -%>
 
